@@ -1,0 +1,28 @@
+  
+
+                    ELASTIC BLOCK STORAGE
+ 1.An Elastic Block Storage (EBS) Volume hosts virtual data in segments. 
+   It's like a storage disk with the ability to contain various sizes of data.
+   These virtual storage devices usually replicate within one AWS region to increase their availability.
+2. Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for use with EC2 instances.
+   EBS volumes behave like raw, unformatted block devices. You can mount these volumes as devices on your instances.
+
+
+                FIRST METHOD
+ >create an ec2 instance in an availabilityzone 
+ >default volume will be created for this 
+ >create a snapshot from that volume
+ >now create second instance in same availability zone for that default volume will be created
+ >now attach a volume which is created by snapshot to second instance
+ >now stop second instance and detach the default root volume and attached snapshot volume
+ >now again attach the volume created from snapshot to second instance as root volume by replacing device name as xvda 
+ >now start the second instance and check the files
+
+                         SECOND METHOD 
+>while creating an instance add an ebs volume and copy the snapshot and launch instance
+>now give ll and check the files (from snapshot volume )
+> create some files and give ll (all files will combine and come)
+ 
+ 
+
+ 
